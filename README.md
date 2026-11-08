@@ -145,3 +145,183 @@ build on — and the `skills/` folder here is the instruction library for your A
 ---
 
 *Track leads: Mirza Ašćerić (ML) · Hole (data engineering). Code under MIT (see `LICENSE`); data under `DATA_USE.md`.*
+
+# Content Refresh Prioritization Using Machine Learning
+
+**Author:** Piasa Das  
+**Role:** Machine Learning Engineering Intern  
+**Organization:** FlyRank AI  
+**Project Track:** General AI Fluency  
+**Lane:** Refresh / Content Opportunity Scoring
+
+---
+
+## 1. Project Overview
+
+This project focuses on identifying web pages that may need content updates or improvements.
+
+Websites contain many pages, and it can be difficult for editors to decide which pages should be reviewed first.
+
+This project uses data analysis and machine learning to prioritize content pages based on signals such as content age, impressions, clicks, engagement, and performance trends.
+
+The goal is to create a ranked list of pages that can help content teams make better review decisions.
+
+## 2. Who Is This Project For?
+
+This project is designed for:
+
+- Content teams
+- SEO analysts
+- Digital marketers
+- Website managers
+- Data analysts
+
+It helps them identify potentially declining content and prioritize pages for human review.
+
+## 3. Technologies Used
+
+- Python
+- Google Colab
+- Pandas
+- NumPy
+- Scikit-learn
+- Matplotlib
+- Machine Learning
+- GitHub
+
+## 4. Project Workflow
+
+The project follows these main steps:
+
+1. Data Understanding – Exploring the anonymized content dataset.
+2. Data Cleaning – Preparing the data for analysis.
+3. Feature Engineering – Selecting useful features for the model.
+4. Baseline Development – Creating a rule-based prioritization approach.
+5. Model Development – Training and comparing machine learning models.
+6. Model Evaluation – Evaluating performance using appropriate metrics.
+7. Validation Audit – Checking possible data leakage and validation reliability.
+8. Recommendations – Using model results to support content review decisions.
+
+## 5. Architecture
+
+```text
+Anonymized Content Dataset
+          |
+          v
+     Data Cleaning
+          |
+          v
+   Feature Engineering
+          |
+          v
+   Baseline Prioritization
+          |
+          v
+   Machine Learning Model
+          |
+          v
+    Model Evaluation
+          |
+          v
+   Validation and Audit
+          |
+          v
+ Ranked Content Review List
+          |
+          v
+     Human Review
+```
+
+## 6. Model Evaluation (V2)
+
+The project explored machine learning models for content prioritization.
+
+The improved V2 Random Forest model was evaluated after removing potentially leaked features and using client-grouped validation.
+
+**V2 Results:**
+
+| Evaluation Metric | Result |
+|---|---:|
+| ROC AUC | 0.903 |
+| Precision@50 | 0.928 |
+
+These results indicate that the model showed strong ranking and classification performance on the evaluated dataset.
+
+Precision@50 measures the proportion of relevant positive examples among the top 50 prioritized pages.
+
+The results should be interpreted within the scope of the available anonymized dataset and its proxy target.
+
+They do not guarantee that refreshing a page will improve its future performance.
+
+## 7. Data Safety and Leakage Prevention
+
+Data leakage was an important consideration during model development.
+
+The project included:
+
+- Reviewing features for possible target leakage.
+- Removing potentially leaked features.
+- Using client-grouped validation.
+- Avoiding the use of future information during prediction.
+- Working with anonymized data.
+
+The target is based on observed performance signals and should not be treated as a confirmed business outcome.
+
+## 8. Limitations
+
+The project has some limitations:
+
+1. The target is a proxy label and does not directly measure whether a content refresh will be successful.
+2. Model performance may vary with different datasets and environments.
+3. The model cannot fully understand content quality or search intent.
+4. A high-priority score does not guarantee that updating a page will improve its performance.
+5. Final content decisions require human review.
+
+## 9. Future Improvements
+
+Possible future improvements include:
+
+- Testing on newer datasets.
+- Improving feature selection.
+- Exploring additional machine learning models.
+- Improving ranking reliability.
+- Adding more detailed explanations for recommendations.
+- Monitoring model performance over time.
+
+## 10. Reproducibility
+
+The project was developed using Python and Google Colab.
+
+To access the repository:
+
+```bash
+git clone https://github.com/piasa19/flyrank-ml-internship-starter.git
+cd flyrank-ml-internship-starter
+pip install -r requirements.txt
+```
+
+For the capstone experiment, open the relevant notebook from the `work/notebooks/` directory in Google Colab and execute the cells in order.
+
+Use the anonymized dataset and the dependencies specified in the repository.
+
+## 11. AI Transparency
+
+AI assistants, including ChatGPT, were used as learning and development support for understanding machine learning concepts, structuring code, troubleshooting errors, and improving documentation.
+
+The project workflow, notebook execution, validation checks, and interpretation of results were reviewed as part of my own work.
+
+AI assistance was used as a support tool rather than a replacement for understanding and reviewing the project.
+
+## 12. Conclusion
+
+This project provided practical experience in data analysis, feature engineering, machine learning, model evaluation, and validation.
+
+It demonstrates how machine learning can support content prioritization and help teams make more informed decisions.
+
+The final output is intended to assist human decision-making rather than replace it.
+
+---
+
+**Project:** Content Refresh Prioritization Using Machine Learning  
+**Author:** Piasa Das  
+**Organization:** FlyRank AI
